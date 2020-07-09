@@ -8,10 +8,9 @@ It will have next fuctions:
   - Search by post title, post body 
   - Pagination
   
-It will have next models: 
+It will have next models with M2M relationship : 
   - Posts 
-  - Tags 
- with M2M relationship 
+  - Tags
  
  ... 
  

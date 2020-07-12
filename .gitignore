@@ -129,6 +129,5 @@ dmypy.json
 .pyre/
 
 # User-specific stuff:
-blogengine/.idea/misc.xml
-blogengine/.idea/vcs.xml
+.idea
 

@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def posts_list(request):
-    return HttpResponse('<h1>There will be posts soon!</h1>')
+    names = ['Igor Kolodiazhnyi', 'I', 'Me']
+    return render(request, 'blog/index.html', context={'author': names})

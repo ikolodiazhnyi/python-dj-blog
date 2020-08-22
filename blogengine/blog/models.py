@@ -17,6 +17,11 @@ class Post(models.Model):
     tags = models.ManyToManyField('Tag', blank=True, related_name='posts')
     date_pub = models.DateTimeField(auto_now_add=True)
 
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.slug = gen_slug(self.title)
+        super().save(*args, **kwargs)
+
     def get_absolute_url(self):
         return reverse('post_detail_url', kwargs={'slug': self.slug})
 

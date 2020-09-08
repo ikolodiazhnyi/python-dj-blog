@@ -6,7 +6,7 @@ from time import time
 
 def gen_slug(s):
     new_slug = slugify(s, allow_unicode=True)
-    return new_slug + str(int(time()))
+    return new_slug + '-' + str(int(time()))
 
 
 # Create your models here.
@@ -26,7 +26,7 @@ class Post(models.Model):
         return reverse('post_detail_url', kwargs={'slug': self.slug})
 
     def get_update_url(self):
-        return reverse('tag_update_url', kwargs={'slug': self.slug})
+        return reverse('post_update_url', kwargs={'slug': self.slug})
 
     def __str__(self):
         return '{}'.format(self.title)
